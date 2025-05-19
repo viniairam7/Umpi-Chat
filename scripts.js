@@ -1,23 +1,31 @@
-console.log("Script carregado com sucesso!");
-
 document.addEventListener("DOMContentLoaded", () => {
     const enviarBtn = document.getElementById("enviar");
     const duvidaInput = document.getElementById("duvida");
     const respostaDiv = document.getElementById("resposta");
 
-    enviarBtn.addEventListener("click", () => {
+    enviarBtn.addEventListener("click", async () => {
         const pergunta = duvidaInput.value.trim();
         if (pergunta === "") {
-            respostaDiv.innerText = "Por favor, digite uma dúvida antes de enviar.";
+            respostaDiv.innerText = "Por favor, digite uma dúvida.";
             return;
         }
 
-        // Aqui seria feita a chamada à API do ChatGPT
-        respostaDiv.innerText = "Pensando... (resposta do ChatGPT aparecerá aqui)";
+        respostaDiv.innerText = "Pensando...";
 
-        // Simulação de resposta
-        setTimeout(() => {
-            respostaDiv.innerText = `🤖 Resposta para: "${pergunta}"\n\n"Confie no Senhor de todo o seu coração e não se apoie em seu próprio entendimento." - Provérbios 3:5`;
-        }, 1000);
+        try {
+            const response = await fetch("/perguntar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+            respostaDiv.innerText = data.resposta || "Sem resposta recebida.";
+        } catch (error) {
+            respostaDiv.innerText = "Erro ao buscar resposta.";
+            console.error("Erro:", error);
+        }
     });
 });
