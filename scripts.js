@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         respostaDiv.innerText = "Pensando...";
 
         try {
-            const response = await fetch("https:///Umpi-Chat.onrender.com/perguntar", {
+            const response = await fetch("http://localhost:3000/perguntar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -22,10 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             const data = await response.json();
-            respostaDiv.innerText = data.resposta || "Sem resposta recebida.";
+console.log("Resposta recebida:", data); // 👈 Adicione isso
+respostaDiv.innerText = data.resposta || "Sem resposta recebida.";
+
         } catch (error) {
             respostaDiv.innerText = "Erro ao buscar resposta.";
             console.error("Erro:", error);
         }
     });
 });
+
