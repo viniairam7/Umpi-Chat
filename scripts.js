@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         respostaDiv.innerText = "Pensando...";
 
         try {
-            const response = await fetch("/perguntar", {
+            const response = await fetch("https://viniairam7.github.io/Umpi-Chat/.onrender.com/perguntar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
