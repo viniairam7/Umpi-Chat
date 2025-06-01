@@ -79,3 +79,23 @@ button:hover {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
+.botao-secundario {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    background-color: #ff8c00;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px #000;
+}
+
+.botao-secundario:hover {
+    background-color: #ffa733;
+}
+
