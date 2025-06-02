@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
         respostaDiv.innerText = "Pensando...";
 
         try {
-            const response = await fetch("http://localhost:3000/perguntar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ pergunta })
-            });
+           const response = await fetch("/perguntar", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ pergunta })
+});
 
             const data = await response.json();
 console.log("Resposta recebida:", data); // 👈 Adicione isso
