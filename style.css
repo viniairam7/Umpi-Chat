@@ -92,3 +92,52 @@ button {
 button:hover {
     background-color: #0f8f6b;
 }
+
+.chat-box {
+    flex-grow: 1;
+    width: 100%;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mensagem {
+    padding: 12px 15px;
+    border-radius: 10px;
+    max-width: 80%;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.mensagem.usuario {
+    background-color: #4b0082;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.mensagem.bot {
+    background-color: #333333;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.input-area textarea {
+    flex-grow: 1;
+    height: 80px;
+    padding: 10px;
+}
