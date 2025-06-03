@@ -1,34 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
     const enviarBtn = document.getElementById("enviar");
     const duvidaInput = document.getElementById("duvida");
-    const respostaDiv = document.getElementById("resposta");
+    const chatBox = document.getElementById("chatBox");
+
+    function adicionarMensagem(texto, tipo) {
+        const mensagemDiv = document.createElement("div");
+        mensagemDiv.classList.add("mensagem", tipo); // tipo: 'usuario' ou 'bot'
+        mensagemDiv.innerText = texto;
+        chatBox.appendChild(mensagemDiv);
+        chatBox.scrollTop = chatBox.scrollHeight; // rolar para a última mensagem
+    }
 
     enviarBtn.addEventListener("click", async () => {
         const pergunta = duvidaInput.value.trim();
         if (pergunta === "") {
-            respostaDiv.innerText = "Por favor, digite uma dúvida.";
+            adicionarMensagem("Por favor, digite uma dúvida.", "bot");
             return;
         }
 
-        respostaDiv.innerText = "Pensando...";
+        adicionarMensagem(pergunta, "usuario");
+        duvidaInput.value = "";
+        adicionarMensagem("Pensando...", "bot");
 
         try {
-           const response = await fetch("https://bible-chat-4.onrender.com/perguntar", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ pergunta })
-});
+            const response = await fetch("https://bible-chat-4.onrender.com/perguntar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ pergunta })
+            });
 
             const data = await response.json();
-console.log("Resposta recebida:", data); // 👈 Adicione isso
-respostaDiv.innerText = data.resposta || "Sem resposta recebida.";
+
+            // Remove o "Pensando..."
+            const pensando = chatBox.querySelector(".bot:last-child");
+            if (pensando && pensando.innerText === "Pensando...") {
+                chatBox.removeChild(pensando);
+            }
+
+            adicionarMensagem(data.resposta || "Sem resposta recebida.", "bot");
 
         } catch (error) {
-            respostaDiv.innerText = "Erro ao buscar resposta.";
+            adicionarMensagem("Erro ao buscar resposta.", "bot");
             console.error("Erro:", error);
         }
     });
 });
-
