@@ -68,9 +68,9 @@ h1 {
 textarea {
     flex-grow: 1;
     height: 60px;
-    padding: 10px 15px;
+    padding: 10px 12px;
     font-size: 1rem;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: #40414f;
     border: 1px solid #555;
     color: #fff;
@@ -79,7 +79,7 @@ textarea {
 
 button {
     padding: 0 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: bold;
     font-size: 1rem;
     background-color: #10a37f;
@@ -95,7 +95,7 @@ button:hover {
 
 .chat-box {
     flex-grow: 1;
-    width: 80%;
+    width: 100%;
     background-color: #1e1e1e;
     color: #ffffff;
     padding: 20px;
@@ -111,7 +111,7 @@ button:hover {
 .mensagem {
     padding: 12px 15px;
     border-radius: 10px;
-    max-width: 80%;
+    max-width: 100%;
     line-height: 1.5;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -131,8 +131,8 @@ button:hover {
 
 .input-area {
     display: flex;
-    gap: 8px;
-    width: 80%;
+    gap: 10px;
+    width: 100%;
     margin-top: 8px;
 }
 
