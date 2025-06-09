@@ -13,7 +13,7 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    margin: 5px 5px 20px 20px;
+    margin: 5px 5px 10px 20px;
     animation: fadeIn 2s ease-in-out;
     color: #ffffff;
 }
@@ -23,8 +23,8 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 800px;
     height: 80%;
     margin-top: 20px; /* <-- espaçamento entre botão e chat */
 }
@@ -34,9 +34,9 @@ h1 {
     width: 80%;
     background-color: #1e1e1e;
     color: #ffffff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     overflow-y: auto;
     max-height: 75vh;
     display: flex;
