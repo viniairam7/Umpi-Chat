@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Remove o "Pensando..."
             const pensando = chatBox.querySelector(".bot:last-child");
-            if (pensando && pensando.innerText === "Pensando...") {
+            if (pensando && pensando.innerText === "Digitando...") {
                 chatBox.removeChild(pensando);
             }
 
