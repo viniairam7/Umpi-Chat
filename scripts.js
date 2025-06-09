@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         adicionarMensagem(pergunta, "usuario");
         duvidaInput.value = "";
-        adicionarMensagem("Pensando...", "bot");
+        adicionarMensagem("Digitando...", "bot");
 
         try {
             const response = await fetch("https://bible-chat-4.onrender.com/perguntar", {
