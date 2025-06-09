@@ -14,7 +14,7 @@ const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
   defaultHeaders: {
     "HTTP-Referer": "http://localhost:3000", // ou seu domínio
-    "X-Title": "UMPI Chat Bíblico"
+    "X-Title": "Airam Chat Bíblico"
   }
 });
 
@@ -29,7 +29,7 @@ app.post("/perguntar", async (req, res) => {
         { role: "user", content: pergunta }
       ],
       temperature: 0.7,
-      max_tokens: 300,
+      max_tokens: 600,
     });
 
     const respostaFinal = chatResponse.choices[0].message.content;
