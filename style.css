@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    margin: 10px;
+    margin: 20px;
     background-color: #343541;
     color: #ececf1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -25,17 +25,17 @@ h1 {
     justify-content: space-between;
     width: 100%;
     max-width: 800px;
-    height: 80%;
+    height: 100%;
     margin-top: 20px; /* <-- espaçamento entre botão e chat */
 }
 
 .chat-box {
     flex-grow: 1;
-    width: 80%;
+    width: 90%;
     background-color: #1e1e1e;
     color: #ffffff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     overflow-y: auto;
     max-height: 75vh;
@@ -45,7 +45,7 @@ h1 {
 }
 
 .mensagem {
-    padding: 12px 15px;
+    padding: 12px 20px;
     border-radius: 10px;
     max-width: 100%;
     line-height: 1.5;
@@ -68,7 +68,7 @@ h1 {
 .input-area {
     display: flex;
     gap: 8px;
-    width: 80%;
+    width: 100%;
     margin-top: 10px; /* 🔧 aumenta respiro entre chat e input */
 }
 
@@ -77,7 +77,7 @@ textarea {
     height: 80px;
     padding: 8px;
     font-size: 1rem;
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: #40414f;
     border: 1px solid #555;
     color: #fff;
